@@ -5,6 +5,18 @@ import time
 st.set_page_config(page_title="Image Labeling App", layout="centered")
 st.title("🔖 Image Labeling Tool (Yes/No)")
 
+st.markdown("""
+### How to Use  
+1. Upload a CSV file with two columns:  
+   - `image_link` → URL of the image  
+   - `is_register` → existing label (`Yes` or `No`)  
+
+2. Use the **Yes/No selector** to confirm or change the label. Select "Yes" if the image is an Anganwadi register, otherwise "No".
+3. Click **Next** to go to the next image, or **Back** to correct the previous one.  
+4. You can **jump to any image** also using the + / - buttons on top of the image box.
+5. At any time, click **Download CSV** to export your work (with a `new_label` column).  
+""")
+
 # Upload CSV
 uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 
